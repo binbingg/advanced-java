@@ -6,5 +6,6 @@
 * 页面
   * [封面]()
   * [首页](README)
+  * [API 参考](/docs/api/)
   * [GitHub](https://github.com/yanglbme)
   * [Offer](offer)
