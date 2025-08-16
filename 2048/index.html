@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <title>2048 - 网页版</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="game-container">
+    <header class="top-bar">
+      <div class="title-group">
+        <h1 class="title">2048</h1>
+        <div class="subtitle">合并方块，达成 2048！</div>
+      </div>
+      <div class="right-controls">
+        <div class="scoreboard">
+          <div class="score" id="score">
+            <div class="label">分数</div>
+            <div class="value" id="score-value">0</div>
+          </div>
+          <div class="score" id="best">
+            <div class="label">最高</div>
+            <div class="value" id="best-value">0</div>
+          </div>
+        </div>
+        <div class="buttons">
+          <button id="undo-btn" class="btn secondary" aria-label="撤销上一步">撤销</button>
+          <button id="new-game-btn" class="btn primary" aria-label="开始新游戏">新游戏</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="board" role="application" aria-label="2048 棋盘 4x4">
+        <div class="grid-cells" aria-hidden="true">
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+          <div class="grid-cell"></div>
+        </div>
+        <div class="tile-container" id="tile-container" aria-live="polite" aria-atomic="true"></div>
+
+        <div class="overlay hidden" id="overlay" aria-live="assertive" aria-atomic="true" role="dialog" aria-modal="true">
+          <div class="message" id="overlay-message">你赢了！</div>
+          <div class="overlay-actions">
+            <button id="keep-going-btn" class="btn secondary">继续游戏</button>
+            <button id="try-again-btn" class="btn primary">再来一局</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <section class="help">
+      <p>使用方向键或 WASD 控制。手机上可滑动操作。合并相同数字的方块，得到更大的数字。</p>
+    </section>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
